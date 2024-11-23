@@ -1,0 +1,76 @@
+.mainFolio{
+    background-color: #F0F0F0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.titleContainer{
+    margin-top: 100px;
+}
+
+.titleContainer h1{
+    font-family: 'Kadwa';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 96px;
+    text-align: center;
+    color: #1A1A2E;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.titleContainer div{
+    background: #1A1A2E;
+    border-radius: 5px;
+    width: 415px;
+    height: 43px;
+}
+
+.cardContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.card{
+    background: #D9D9D9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    width: 45%;
+    padding: 30px;
+}
+
+.card h1{
+    font-family: 'Kadwa';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 48px;
+    text-align: left;
+    color: #1A1A2E;
+}
+
+.card h1 a{
+    text-decoration: underline;
+    color: black;
+}
+
+.descriptionContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.descriptionContainer p{
+    font-family: 'Kadwa';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 40px;
+    color: #363655;
+}
+

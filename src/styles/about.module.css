@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&family=Kaushan+Script&display=swap');
+
+.HomeMain {
+    display: flex;
+    flex-direction: column;
+}
+
+.AboutMain {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+.HeroSection {
+    background-color: #1e2248;
+    color: #fff;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+}
+
+.PresText h3 {
+    font-family: 'Leelawadee UI';
+    font-size: 32px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.PresText p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #C0C0C0;
+    text-align: center;
+}
+
+/* Секция с миссией */
+.MissionSection {
+    padding: 5rem;
+}
+
+/* Сетка для блоков миссии */
+.MissionGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.MissionBlock {
+  padding: 1.5rem;
+  text-align: center;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.MissionBlock h2 {
+  font-family: 'Leelawadee UI';
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 20px;
+  text-align: #1A1A2E;
+}
+
+.MissionBlock p {
+  font-family: 'Kadwa';
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: #363655;
+
+}
+
+/* Секция с будущими проектами */
+.FutureSection {
+    border-top: 4px solid rgb(240, 234, 234);
+    text-align: center;
+    padding: 30px 20px;
+}
+
+/* Заголовки в секции Future */
+.FutureSection h3 {
+    font-family: 'Kadwa';
+    color: #3FBD5C;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* Текст в секции Future */
+.FutureSection p {
+    font-family: 'Leelawadee UI';
+    font-size: 24px;
+}
+
+/* Вторичный заголовок в секции Future */
+.FutureSection h2 {
+    font-family: 'Leelawadee UI';
+    color: #3FBD5C;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Кнопка для создания проекта */
+.CreateProjectBtn {
+    background-color: #3FBD5C;
+    color: #fff;
+    padding: 20px 80px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.CreateProjectBtn:hover {
+    background-color: #4a5568;
+}
+
+/* HeroSection - более детальная стилизация */
+.HeroSection {
+    height: 255px;
+    background: linear-gradient(180deg, #1A1A2E 0%, #363655 100%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap; /* Добавление для адаптивности */
+}
+
+/* Текст в HeroSection */
+.PresText {
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    flex: 1;
+}
+
+.PresText h3 {
+    font-family: 'Leelawadee UI';
+    color: #3FBD5C;
+    font-size: 24px;
+}
+
+.PresText p {
+    font-family: 'Kadwa';
+    color: #C0C0C0;
+    font-size: 18px;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .HeroSection {
+        flex-direction: column; /* Вертикальное расположение элементов */
+        height: auto;
+        padding: 20px;
+    }
+
+    .PresText {
+        padding: 0 20px; /* Уменьшаем отступы */
+    }
+
+    .PresText h3 {
+        font-size: 1.5rem; /* Уменьшаем шрифт на мобильных */
+    }
+
+    .PresText p {
+        font-size: 1rem; /* Уменьшаем шрифт на мобильных */
+    }
+
+    .MissionGrid {
+        grid-template-columns: 1fr; /* Один столбец для мобильных устройств */
+    }
+
+    .MissionBlock {
+        padding: 1rem; /* Уменьшаем отступы внутри блоков */
+    }
+
+    .CreateProjectBtn {
+        padding: 15px 50px; /* Уменьшаем размеры кнопки */
+        font-size: 14px;
+    }
+
+    .FutureSection h3 {
+        font-size: 24px;
+    }
+
+    .FutureSection p {
+        font-size: 18px;
+    }
+
+    .FutureSection h2 {
+        font-size: 20px;
+    }
+}
+
+/* Адаптивность для планшетов */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .HeroSection {
+        flex-direction: row;
+        padding: 30px;
+    }
+
+    .PresText h3 {
+        font-size: 2rem;
+    }
+
+    .PresText p {
+        font-size: 1.125rem;
+    }
+
+    .MissionGrid {
+        grid-template-columns: 1fr 1fr; /* Два столбца на планшетах */
+    }
+
+    .MissionBlock {
+        padding: 1.5rem;
+    }
+
+    .CreateProjectBtn {
+        padding: 18px 70px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .HeroSection {
+        flex-direction: row;
+        height: 255px;
+        padding: 40px;
+    }
+
+    .PresText h3 {
+        font-size: 2.25rem; 
+    }
+
+    .PresText p {
+        font-size: 1.25rem;
+    }
+
+    .MissionGrid {
+        grid-template-columns: 1fr 1fr; 
+    }
+
+    .CreateProjectBtn {
+        padding: 20px 80px;
+    }
+}
+

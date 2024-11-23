@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&family=Kaushan+Script&display=swap');
+
+.header {
+    background-color: #1A1A2E;
+    padding: 1.5rem 2rem; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    z-index: 100; 
+}
+
+.headerContainer {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%;    
+}
+
+  .logo {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .nav {
+    font-family: 'Kadwa';
+    display: flex;
+    gap: 9rem;
+  }
+  
+  .languageSwitcher button {
+    font-family: 'Kadwa';
+    padding: 0.5rem 1rem;
+    background-color: #363655;
+    color: #C0C0C0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  } 
+
+.headerLinksCreate a{
+    color: #3FBD5C;
+}
+
+.headerLink, .headerLinkCreate, .activeLink, .activeLinkCreate {
+  font-family: 'Kadwa';
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.activeLink {
+    color: #3FBD5C;
+    font-weight: bold;
+}
+
+.headerLinkCreate {
+    color: #3FBD5C; 
+    font-weight: 600;
+}
+
+.activeLinkCreate {
+    color: #3FBD5C; 
+    font-weight: bold;
+}
+

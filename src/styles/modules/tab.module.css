@@ -1,0 +1,35 @@
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tabButton {
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #D9D9D9;
+  color: #000000;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  border: none;
+  font-family: 'Leelawadee UI';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.tabButton.active {
+  background-color: #8585D3;
+}
+
+.content {
+  font-family: 'Leelawadee UI';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
+  color: #363655;
+}
+
+
+
