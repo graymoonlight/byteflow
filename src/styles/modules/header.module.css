@@ -1,90 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&family=Kaushan+Script&display=swap');
 
-.kadwa-regular {
-  font-family: "Kadwa", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.kadwa-bold {
-  font-family: "Kadwa", serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.header{
+.header {
     background-color: #1A1A2E;
-    height: 57px;
+    padding: 1.5rem 2rem; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    z-index: 100; 
+}
+
+.headerContainer {
     display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%;    
+}
+
+  .logo {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .nav {
     font-family: 'Kadwa';
-    font-style: normal;
-    font-weight: 600;
-}
-
-.headerContainer{
     display: flex;
-    align-items: center;
-    width: 100%;
-}
-
-.headerLogo img {
-    margin-top: 7px;
-    max-width: 100%;
-    margin-right: 400px;
-    margin-left: 20px;
-}
-
-.headerLinks{
-    display: flex;
-}
-
-.headerLinks {
-    display: flex;
-}
+    gap: 9rem;
+  }
   
-.headerLinks a {
-    color: #C0C0C0;
-    text-decoration: none;
-    font-size: 20px;
-    align-items: center;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    margin-right: 200px;
-}
-  
-.headerLinks a:hover {
-    text-decoration: none;
-}
-
-.activeLink a {
-    color: #86f09fec;
-}
-
-.headerLanguage{
-    margin-left: 300px;
-}
-
-.headerLanguage button{
-    border-radius: 10px;
+  .languageSwitcher button {
+    font-family: 'Kadwa';
+    padding: 0.5rem 1rem;
     background-color: #363655;
-    width: 145px;
-    height: 35px;
-    border: none;
     color: #C0C0C0;
-    font-family: 'Kadwa';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-}
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  } 
+>>>>>>> master
 
 .headerLinksCreate a{
     color: #3FBD5C;
 }
 
-.activeLinkCreate a{
-    color: #FFD700;
+.headerLink, .headerLinkCreate, .activeLink, .activeLinkCreate {
+  font-family: 'Kadwa';
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
+.activeLink {
+    color: #3FBD5C;
+    font-weight: bold;
+}
 
+.headerLinkCreate {
+    color: #3FBD5C; 
+    font-weight: 600;
+}
+
+.activeLinkCreate {
+    color: #3FBD5C; 
+    font-weight: bold;
+}
 

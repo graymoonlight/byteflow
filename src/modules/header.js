@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 
 import Link from 'next/link';
 import Image from 'next/image';
@@ -8,32 +9,34 @@ import logo from '../../public/logo.png';
 
 const Header = () => {
 
-    const pathname = usePathname();
+  const pathname = usePathname();
+
+  const getLinkClass = (linkPath) => {
+    if (linkPath === '/create') {
+      return pathname === linkPath ? styles.activeLinkCreate : styles.headerLinkCreate;
+    }
+    return pathname === linkPath ? styles.activeLink : styles.headerLink;
+  };
 
   return (
     <header className={styles.header}>
       <div className={styles.headerContainer}>
-        <div className={styles.headerLogo}>
-            <Image src={logo} alt="ByteFlow Studio Logo" width={209} height={42} />
+        {/* Logo */}
+        <div className={styles.logo}>
+          <Image src={logo} alt="ByteFlow Studio Logo" width={209} height={42} />
         </div>
-        <nav className={styles.headerLinks}>
-          <div className={pathname === "/" ? styles.activeLink : styles.headerLinksHome}>
-            <Link href="/">Главная</Link>
-          </div>
-          <div className={pathname === "/about" ? styles.activeLink : styles.headerLinksAbout}>
-            <Link href="/about">О нас</Link>
-          </div>
-          <div className={pathname === "/services" ? styles.activeLink : styles.headerLinksServi}>
-            <Link href="/services">Услуги</Link>
-          </div>
-          <div className={pathname === "/portfolio" ? styles.activeLink : styles.headerLinksPortf}>
-            <Link href="/portfolio">Портфолио</Link>
-          </div>
-          <div className={pathname === "/create" ? styles.activeLinkCreate : styles.headerLinksCreate}>
-            <Link href="/create">Создать проект!</Link>
-          </div>
+
+        {/* Navigation Links */}
+        <nav className={styles.nav}>
+          <Link href="/" className={getLinkClass('/')}>Главная</Link>
+          <Link href="/about" className={getLinkClass('/about')}>О нас</Link>
+          <Link href="/services" className={getLinkClass('/services')}>Услуги</Link>
+          <Link href="/portfolio" className={getLinkClass('/portfolio')}>Портфолио</Link>
+          <Link href="/create" className={getLinkClass('/create')}>Создать проект!</Link>
         </nav>
-        <div className={styles.headerLanguage}>
+
+        {/* Language Switcher */}
+        <div className={styles.languageSwitcher}>
           <button>Change language</button>
         </div>
       </div>
@@ -42,8 +45,3 @@ const Header = () => {
 };
 
 export default Header;
-
-
-
-
-
