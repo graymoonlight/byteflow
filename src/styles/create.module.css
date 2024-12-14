@@ -149,4 +149,17 @@
   width: 200px;
 }
 
+.select {
+  margin-top: 5px;
+  background-color: #1A1A2E;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Kadwa';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 32px;
+  text-align: center;
+  color: #C0C0C0;
+}
 

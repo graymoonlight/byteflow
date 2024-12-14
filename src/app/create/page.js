@@ -15,12 +15,31 @@ export default function Create() {
     consent: false,
   });
 
+  const serviceLabels = {
+    web_dev: 'Веб-разработка',
+    mobile_dev: 'Мобильная разработка',
+    web3_dev: 'Веб3.0-разработка',
+    concept_dev: 'Разработка концепции',
+    ai_dev: 'Разработка AI-сервисов',
+    chatbot_dev: 'Разработка чат-ботов',
+    project_analysis: 'Анализ и доработка проекта',
+    product_design: 'Дизайн продукта',
+  };
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setFormData({
-      ...formData,
-      [name]: type === 'checkbox' ? checked : value,
-    });
+
+    if (name === "service") {
+      setFormData({
+        ...formData,
+        [name]: serviceLabels[value],
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: type === "checkbox" ? checked : value,
+      });
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -106,7 +125,26 @@ export default function Create() {
                     <input type="email" name="email" value={formData.email} onChange={handleChange} required className={styles.input} placeholder="Введите ваш почтовый ящик"/>
                 </div>
                 <div className={styles.field3}>
-                    <input type="text" name="service" value={formData.service} onChange={handleChange} required className={styles.input} placeholder="Выберите тип услуги"/>
+                  <select
+                      name="service"
+                      value={
+                        Object.keys(serviceLabels).find(
+                          (key) => serviceLabels[key] === formData.service
+                          ) || ""
+                      }
+                      onChange={handleChange}
+                      className={styles.select}
+                    >
+                    <option value="">Выберите услугу</option>
+                    <option value="web_dev">Веб-разработка</option>
+                    <option value="mobile_dev">Мобильная разработка</option>
+                    <option value="web3_dev">Веб3.0-разработка</option>
+                    <option value="concept_dev">Разработка концепции</option>
+                    <option value="ai_dev">Разработка AI-сервисов</option>
+                    <option value="chatbot_dev">Разработка чат-ботов</option>
+                    <option value="project_analysis">Анализ и доработка проекта</option>
+                    <option value="product_design">Дизайн продукта</option>
+                  </select>
                 </div>
                 <div className={styles.field3}>
                     <textarea name="comment" value={formData.comment} onChange={handleChange} className={styles.input} placeholder="Напишите ваши пожелания, идеи"/>
