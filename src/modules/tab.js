@@ -1,66 +1,85 @@
 "use client";
 
-import { useState, useEffect } from 'react';
-import styles from '@/styles/modules/tab.module.css';
+import { useState, useEffect } from "react";
+import styles from "@/styles/modules/tab.module.css";
+import { useLanguage } from "@/context/LanguageContext";
 
 const Tab = () => {
-  const [activeTab, setActiveTab] = useState('web');
-  const [tabContent, setTabContent] = useState('');
+  const [activeTab, setActiveTab] = useState("web");
+  const [tabContent, setTabContent] = useState("");
+  const { language } = useLanguage();
+
+  const texts = {
+    ru: {
+      webTitle: "Веб-разработка",
+      mobileTitle: "Мобильная разработка",
+      conceptTitle: "Разработка концепции",
+      designTitle: "Дизайн продукта",
+    },
+    en: {
+      webTitle: "Web Development",
+      mobileTitle: "Mobile Development",
+      conceptTitle: "Concept Development",
+      designTitle: "Product Design",
+    },
+  };
+
+  const t = texts[language];
 
   useEffect(() => {
     const loadContent = async () => {
       let contentModule;
       switch (activeTab) {
-        case 'web':
-          contentModule = await import('@/content/web');
+        case "web":
+          contentModule = await import(`@/content/web_${language}`);
           break;
-        case 'mobile':
-          contentModule = await import('@/content/web');
+        case "mobile":
+          contentModule = await import(`@/content/mobile_${language}`);
           break;
-        case 'concept':
-          contentModule = await import('@/content/web');
+        case "concept":
+          contentModule = await import(`@/content/concept_${language}`);
           break;
-        case 'design':
-          contentModule = await import('@/content/web');
+        case "design":
+          contentModule = await import(`@/content/design_${language}`);
           break;
         default:
-          contentModule = { default: 'Содержимое отсутствует' };
+          contentModule = { default: "Содержимое отсутствует" };
       }
       setTabContent(contentModule.default);
     };
     loadContent();
-  }, [activeTab]);
+  }, [activeTab, language]);
 
   return (
     <div className={styles.content}>
       <div className={styles.tabs}>
         <button
-          className={`${styles.tabButton} ${activeTab === 'web' ? styles.active : ''}`}
-          onClick={() => setActiveTab('web')}
+          className={`${styles.tabButton} ${activeTab === "web" ? styles.active : ""}`}
+          onClick={() => setActiveTab("web")}
         >
-          Веб-разработка
+          {t.webTitle}
         </button>
         <button
-          className={`${styles.tabButton} ${activeTab === 'mobile' ? styles.active : ''}`}
-          onClick={() => setActiveTab('mobile')}
+          className={`${styles.tabButton} ${activeTab === "mobile" ? styles.active : ""}`}
+          onClick={() => setActiveTab("mobile")}
         >
-          Мобильная разработка
+          {t.mobileTitle}
         </button>
         <button
-          className={`${styles.tabButton} ${activeTab === 'concept' ? styles.active : ''}`}
-          onClick={() => setActiveTab('concept')}
+          className={`${styles.tabButton} ${activeTab === "concept" ? styles.active : ""}`}
+          onClick={() => setActiveTab("concept")}
         >
-          Разработка концепции
+          {t.conceptTitle}
         </button>
         <button
-          className={`${styles.tabButton} ${activeTab === 'design' ? styles.active : ''}`}
-          onClick={() => setActiveTab('design')}
+          className={`${styles.tabButton} ${activeTab === "design" ? styles.active : ""}`}
+          onClick={() => setActiveTab("design")}
         >
-          Дизайн продукта
+          {t.designTitle}
         </button>
       </div>
 
-      <p>{tabContent}</p>
+      <div>{tabContent}</div>
     </div>
   );
 };

@@ -2,39 +2,62 @@
 
 import { useState, useEffect } from 'react';
 import styles from '@/styles/modules/tab2.module.css';
+import { useLanguage } from "@/context/LanguageContext";
 
 const Tab2 = () => {
   const [activeTab, setActiveTab] = useState('markets');
   const [tabContent, setTabContent] = useState('');
-  const [tabTitle, setTabTitle] = useState('Маркетплейсы'); // Добавлено состояние для названия вкладки
+  const [tabTitle, setTabTitle] = useState('');
+  const { language } = useLanguage();
+
+  const texts = {
+    ru: {
+      marketsTitle: "Маркетплейсы",
+      socialTitle: "Социальные сети",
+      learnTitle: "Образовательные платформы",
+      web3Title: "Приложения Веб 3.0",
+      smartTitle: "Смарт-контракты",
+      otherTitle: "Другие сервисы и приложения",
+    },
+    en: {
+      marketsTitle: "Marketplaces",
+      socialTitle: "Social Networks",
+      learnTitle: "Educational Platforms",
+      web3Title: "Web 3.0 Applications",
+      smartTitle: "Smart-contracts",
+      otherTitle: "Other services and apps",
+    },
+  };
+
+  const t = texts[language];
 
   useEffect(() => {
     const loadContent = async () => {
       let contentModule;
       switch (activeTab) {
         case 'markets':
-          setTabTitle('Маркетплейсы');
-          contentModule = await import('@/content/markets');
+          setTabTitle(t.marketsTitle);
+          contentModule = await import(`@/content/markets_${language}`);
           break;
         case 'social':
-          setTabTitle('Социальные сети');
-          contentModule = await import('@/content/markets');
+          setTabTitle(t.socialTitle);
+          contentModule = await import(`@/content/social_${language}`);
           break;
         case 'learn':
-          setTabTitle('Образовательные платформы');
-          contentModule = await import('@/content/markets');
+          setTabTitle(t.learnTitle);
+          contentModule = await import(`@/content/learn_${language}`);
           break;
         case 'web3':
-          setTabTitle('Приложения Веб 3.0');
-          contentModule = await import('@/content/markets');
+          setTabTitle(t.web3Title);
+          contentModule = await import(`@/content/web3_${language}`);
           break;
         case 'contracts':
-          setTabTitle('Смарт-контракты');
-          contentModule = await import('@/content/markets');
+          setTabTitle(t.smartTitle);
+          contentModule = await import(`@/content/smart_${language}`);
           break;
         case 'other':
-          setTabTitle('Другие сервисы и приложения');
-          contentModule = await import('@/content/markets');
+          setTabTitle(t.otherTitle);
+          contentModule = await import(`@/content/other_${language}`);
           break;
         default:
           setTabTitle('Содержимое отсутствует');
@@ -52,37 +75,37 @@ const Tab2 = () => {
           className={`${styles.tabButton} ${activeTab === 'markets' ? styles.active : ''}`}
           onClick={() => setActiveTab('markets')}
         >
-          Маркетплейсы
+          {t.marketsTitle}
         </button>
         <button
           className={`${styles.tabButton} ${activeTab === 'social' ? styles.active : ''}`}
           onClick={() => setActiveTab('social')}
         >
-          Социальные сети
+          {t.socialTitle}
         </button>
         <button
           className={`${styles.tabButton} ${activeTab === 'learn' ? styles.active : ''}`}
           onClick={() => setActiveTab('learn')}
         >
-          Образовательные платформы
+          {t.learnTitle}
         </button>
         <button
           className={`${styles.tabButton} ${activeTab === 'web3' ? styles.active : ''}`}
           onClick={() => setActiveTab('web3')}
         >
-          Приложения Веб 3.0
+          {t.web3Title}
         </button>
         <button
           className={`${styles.tabButton} ${activeTab === 'contracts' ? styles.active : ''}`}
           onClick={() => setActiveTab('contracts')}
         >
-          Смарт-контракты
+          {t.smartTitle}
         </button>
         <button
           className={`${styles.tabButton} ${activeTab === 'other' ? styles.active : ''}`}
           onClick={() => setActiveTab('other')}
         >
-          Другие сервисы и приложения
+          {t.otherTitle}
         </button>
       </div>
 

@@ -20,7 +20,7 @@ const webText = `Оставьте позади устаревшие методы
 этому? Мы здесь, чтобы помочь вам добиться<br>
 невероятных высот!`;
 
-function WebContent() {
+function WebContentRu() {
   return (
     <div
       dangerouslySetInnerHTML={{ __html: webText }}
@@ -28,4 +28,4 @@ function WebContent() {
   );
 }
 
-export default WebContent;
+export default WebContentRu;

@@ -9,7 +9,7 @@ const webText = `Маркетплейс — это мощная платформ
 людям возможность находить друг друга и <br/> 
 заключать выгодные сделки.`;
 
-function Markets() {
+function MarketsRu() {
   return (
     <div
       dangerouslySetInnerHTML={{ __html: webText }}
@@ -17,4 +17,4 @@ function Markets() {
   );
 }
 
-export default Markets;
+export default MarketsRu;

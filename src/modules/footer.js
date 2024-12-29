@@ -61,10 +61,12 @@ const Footer = () => {
           <h2>{texts[language].socialMedia}</h2>
           <div className={styles.mediaInfo}>
             <div>
-              <Image src={vk} alt="VK Icon" width={54} height={54} />
+              <Image src={vk} alt="VK Icon" width={54} height={54}/>
             </div>
             <div>
-              <Image src={tg} alt="Telegram Icon" width={54} height={54} />
+              <a href="https://t.me/ByteFlowStudio">
+                <Image src={tg} alt="Telegram Icon" width={54} height={54} />
+              </a>
             </div>
           </div>
           <div className={styles.footerRights}>

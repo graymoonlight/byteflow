@@ -63,6 +63,7 @@
     font-weight: 700;
     font-size: 13px;
     line-height: 26px;
+    cursor: pointer;
 }
 
 .LeftContainer h3{
@@ -86,7 +87,6 @@
     font-weight: 700;
     font-size: 20px;
     line-height: 27px;
-    display: flex;
     color: #363655;
 }
 

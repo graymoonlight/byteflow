@@ -103,6 +103,7 @@
 
 .mediaInfo div{
     margin-right: 20px;
+    cursor: pointer;
 }
 
 .footerRights{
