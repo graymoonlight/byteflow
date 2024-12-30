@@ -16,6 +16,12 @@ export default function Create() {
     consent: false,
   });
 
+  const [modal, setModal] = useState({
+    visible: false,
+    message: '',
+    success: true,
+  });
+
   const serviceLabels = {
     web_dev: 'Веб-разработка',
     mobile_dev: 'Мобильная разработка',
@@ -46,31 +52,51 @@ export default function Create() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.consent) {
-      alert('Необходимо согласие на обработку персональных данных');
+      setModal({
+        visible: true,
+        message: 'Необходимо согласие на обработку персональных данных',
+        success: false,
+      });
       return;
     }
 
-    const response = await fetch('/api/sendForm', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    });
-
-    if (response.ok) {
-      alert('Заявка отправлена!');
-      setFormData({
-        name: '',
-        company: '',
-        phone: '',
-        email: '',
-        service: '',
-        comment: '',
-        consent: false,
+    try {
+      const response = await fetch('/api/sendForm', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-    } else {
-      alert('Ошибка отправки. Попробуйте еще раз.');
+
+      if (response.ok) {
+        setModal({
+          visible: true,
+          message: 'Заявка отправлена!',
+          success: true,
+        });
+        setFormData({
+          name: '',
+          company: '',
+          phone: '',
+          email: '',
+          service: '',
+          comment: '',
+          consent: false,
+        });
+      } else {
+        setModal({
+          visible: true,
+          message: 'Ошибка отправки. Попробуйте еще раз.',
+          success: false,
+        });
+      }
+    } catch (error) {
+      setModal({
+        visible: true,
+        message: 'Произошла ошибка. Попробуйте еще раз.',
+        success: false,
+      });
     }
   };
 
@@ -133,6 +159,22 @@ export default function Create() {
 
   return (
     <main className={styles.createMain}>
+      {modal.visible && (
+        <div className={styles.modalOverlay}>
+          <div className={styles.modalWindow}>
+            <h2 className={styles.modalTitle}>
+              {modal.success ? 'Успех' : 'Ошибка'}
+            </h2>
+            <p className={styles.modalMessage}>{modal.message}</p>
+            <button
+              className={styles.modalButton}
+              onClick={() => setModal({ ...modal, visible: false })}
+            >
+              Закрыть
+            </button>
+          </div>
+        </div>
+      )}
       <div className={styles.formContainer}>
         <h1 className={styles.title}>{t.mainTitle}</h1>
         <form onSubmit={handleSubmit} className={styles.form}>
@@ -206,6 +248,19 @@ export default function Create() {
                 </div>
                 <div className={styles.field3}>
                     <textarea name="comment" value={formData.comment} onChange={handleChange} className={styles.input} placeholder={t.commentDesc}/>
+                </div>
+                <div className={styles.field4}>
+                    <label className={styles.customCheckbox}>
+                        <input
+                            type="checkbox"
+                            name="consent"
+                            checked={formData.consent}
+                            onChange={handleChange}
+                            className={styles.checkbox}
+                        />
+                        <span className={styles.checkmark}></span>
+                        <span className={styles.checkboxLabel}><Link href={'/privacy-policy'}>{t.policyTitle}</Link></span>
+                    </label>
                 </div>
                 <button type="submit" className={styles.button}>{t.submitTitle}</button>
             </div>

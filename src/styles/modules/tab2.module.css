@@ -61,3 +61,51 @@
     line-height: 32px;
 }
 
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .tabs {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .tabButton {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .content {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 40px;
+  }
+
+  .tabTitle {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .textContainer p {
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .textContainer h3 {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 10px;
+  }
+}
+

@@ -1,20 +1,19 @@
 import nodemailer from 'nodemailer';
 
-// Экспортируем POST как именованный метод
+
 export async function POST(req) {
   try {
     const { name, company, phone, email, service, comment } = await req.json();
 
     console.log('Получены данные:', { name, company, phone, email, service, comment });
 
-    // Настроим транспорт для отправки почты
     const transporter = nodemailer.createTransport({
       host: 'smtp.yandex.ru',  // Яндекс SMTP-сервер
       port: 587,               // Порт для TLS
-      secure: false,           // Использовать STARTTLS
+      secure: false,           // STARTTLS
       auth: {
         user: process.env.EMAIL_USER,  // Почта отправителя
-        pass: process.env.EMAIL_PASS,  // Приложение пароля (в .env)
+        pass: process.env.EMAIL_PASS,  // Приложение пароля
       },
     });
 

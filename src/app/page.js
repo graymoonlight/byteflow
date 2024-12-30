@@ -248,10 +248,10 @@ export default function Home() {
                 </span>
               ))}
             </p>
-            <Image src={checkmark} width={82} height={73} alt='checkmark'/>
+            <Image src={checkmark} width={82} height={73} alt='checkmark' className={styles.checkmark}/>
           </div>
           <div className={styles.TextContainer}>
-            <Image src={checkmark} width={82} height={73} alt='checkmark'/>
+            <Image src={checkmark} width={82} height={73} alt='checkmark' className={styles.checkmark}/>
             <p>
               {(Array.isArray(t.aboutText2) ? t.aboutText2 : t.aboutText2?.split('\n')).map((line, index) => (
                 <span key={index}>
@@ -270,7 +270,7 @@ export default function Home() {
                 </span>
               ))}
             </p>
-            <Image src={checkmark} width={82} height={73} alt='checkmark'/>
+            <Image src={checkmark} width={82} height={73} alt='checkmark' className={styles.checkmark}/>
           </div>
         </div>
         <div className={styles.RightContainer}>
@@ -335,8 +335,8 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.MiddleLine}>
-            <Image src={line} width={269} height={717} alt='line'/>
-            <Image src={win} width={96} height={74} alt='win'/>
+            <Image src={line} width={269} height={717} alt='line' className={styles.line}/>
+            <Image src={win} width={96} height={74} alt='win' className={styles.win}/>
           </div>
           <div className={styles.RightContent}>
             <div className={styles.Content}>

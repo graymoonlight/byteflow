@@ -5,6 +5,7 @@
     padding: 1.5rem 2rem; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
     z-index: 100; 
+    position: relative;
 }
 
 .headerContainer {
@@ -14,18 +15,19 @@
     width: 100%;    
 }
 
-  .logo {
+.logo {
     display: flex;
     justify-content: flex-start;
-  }
+}
 
-  .nav {
+.nav {
     font-family: 'Kadwa';
     display: flex;
     gap: 9rem;
-  }
-  
-  .languageSwitcher button {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.languageSwitcher1 button {
     font-family: 'Kadwa';
     padding: 0.5rem 1rem;
     background-color: #363655;
@@ -34,14 +36,26 @@
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  } 
+}
 
-.headerLinksCreate a{
+.languageSwitcher2 button {
+  font-family: 'Kadwa';
+  color: #C0C0C0;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.headerLinksCreate a {
     color: #3FBD5C;
 }
 
 .headerLink, .headerLinkCreate, .activeLink, .activeLinkCreate {
-  font-family: 'Kadwa';
+    font-family: 'Kadwa';
     color: #ffffff;
     font-size: 1.1rem;
     font-weight: 500;
@@ -64,3 +78,66 @@
     font-weight: bold;
 }
 
+.menuToggle{
+  display: none;
+}
+
+.languageSwitcher2{
+  display: none;
+}
+
+
+@media (max-width: 768px) {
+    .header {
+        padding: 1rem 1.5rem;
+    }
+
+    .nav {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(180deg, #1A1A2E 0%, #363655 100%);
+        padding: 1rem 0;
+        gap: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none;
+    }
+
+    .nav.active {
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    .menuToggle {
+        display: flex;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+    }
+
+    .menuToggle img {
+        width: 100%;
+        height: auto;
+    }
+
+    .languageSwitcher1{
+      display: none;
+    }
+
+    .languageSwitcher2{
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+}

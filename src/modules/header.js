@@ -1,15 +1,18 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useLanguage } from "../context/LanguageContext";
 import styles from "../styles/modules/header.module.css";
 import logo from "../../public/logo.png";
+import menuIcon from "../../public/option.svg";
 
 const Header = () => {
   const pathname = usePathname();
   const { language, toggleLanguage } = useLanguage();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const texts = {
     ru: {
@@ -39,6 +42,10 @@ const Header = () => {
     return pathname === linkPath ? styles.activeLink : styles.headerLink;
   };
 
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.headerContainer}>
@@ -46,7 +53,11 @@ const Header = () => {
           <Image src={logo} alt="ByteFlow Studio Logo" width={209} height={42} />
         </div>
 
-        <nav className={styles.nav}>
+        <div className={styles.menuToggle} onClick={toggleMenu}>
+          <Image src={menuIcon} alt="Menu Icon" />
+        </div>
+
+        <nav className={`${styles.nav} ${menuOpen ? styles.active : ""}`}>
           <Link href="/" className={getLinkClass("/")}>
             {texts[language].home}
           </Link>
@@ -62,9 +73,14 @@ const Header = () => {
           <Link href="/create" className={getLinkClass("/create")}>
             {texts[language].create}
           </Link>
+          <div className={styles.languageSwitcher2}>
+            <button onClick={toggleLanguage}>
+              {texts[language].changeLanguage}
+            </button>
+          </div>
         </nav>
 
-        <div className={styles.languageSwitcher}>
+        <div className={styles.languageSwitcher1}>
           <button onClick={toggleLanguage}>
             {texts[language].changeLanguage}
           </button>

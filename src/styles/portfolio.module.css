@@ -74,3 +74,50 @@
     color: #363655;
 }
 
+@media (max-width: 1440px) {
+  .mainFolio {
+    padding: 20px;
+  }
+
+  .titleContainer {
+    margin-top: 30px;
+  }
+
+  .titleContainer h1 {
+    font-size: 28px;
+    line-height: 56px;
+  }
+
+  .titleContainer div {
+    width: 200px;
+    height: 30px;
+  }
+
+  .cardContainer {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .card {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .card h1 {
+    text-align: center;
+    font-size: 18px;
+    line-height: 36px;
+  }
+
+  .descriptionContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .descriptionContainer p {
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+  }
+}
