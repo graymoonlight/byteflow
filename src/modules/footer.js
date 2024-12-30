@@ -45,7 +45,7 @@ const Footer = () => {
       <div className={styles.footerContainer}>
         <div className={styles.footerContainerLeft}>
           <div className={styles.footerLogo}>
-            <Image src={logo} alt="ByteFlow Studio Logo" width={218} height={116} />
+            <Image src={logo} alt="ByteFlow Studio Logo" width={218} height={100} />
           </div>
           <h2>{texts[language].contactInfo}</h2>
           <div className={styles.contactInfo}>

@@ -196,7 +196,7 @@ export default function Services() {
           </p>
         </div>
         <div className={styles.PresImage}>
-        <Image src="/services/question.svg" alt="Question Icon" width={406} height={387} sizes="(max-width: 768px) 100vw, 50vw"/>
+        <Image src="/services/question.svg" alt="Question Icon" width={406} height={387} className={styles.question}/>
 
         </div>
       </section>

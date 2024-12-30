@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&family=Kaushan+Script&display=swap');
 
-/* Основные стили для контейнера */
 .HomeMain {
     display: flex;
     flex-direction: column;
@@ -114,6 +113,11 @@
 @media (max-width: 768px) {
     .HomeMain {
         padding: 10px;
+    }
+
+    .question{
+        width: 100px;
+        height: 100px;
     }
 
     .HeroSection {

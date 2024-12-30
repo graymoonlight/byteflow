@@ -50,7 +50,7 @@ export default function Portfolio() {
                 <div className={styles.card}>
                     <h1>{t.linkTitle} <a href='https://kangrun-auto.ru'>kangrun-auto</a></h1>
                     <div className={styles.descriptionContainer}>
-                        <Image src={kangrun} width={599} height={472} alt='kangrun'/>
+                        <Image src={kangrun} width={599} height={472} alt='kangrun' className={styles.kangrun}/>
                         <p>
                             {(Array.isArray(t.descTitle) ? t.descTitle : t.descTitle?.split('\n')).map((line, index) => (
                                 <span key={index}>
