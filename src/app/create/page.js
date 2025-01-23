@@ -54,7 +54,7 @@ export default function Create() {
     if (!formData.consent) {
       setModal({
         visible: true,
-        message: 'Необходимо согласие на обработку персональных данных',
+        message: t.modalShould,
         success: false,
       });
       return;
@@ -72,7 +72,7 @@ export default function Create() {
       if (response.ok) {
         setModal({
           visible: true,
-          message: 'Заявка отправлена!',
+          message: t.modalAgree,
           success: true,
         });
         setFormData({
@@ -87,14 +87,14 @@ export default function Create() {
       } else {
         setModal({
           visible: true,
-          message: 'Ошибка отправки. Попробуйте еще раз.',
+          message: t.modalError1,
           success: false,
         });
       }
     } catch (error) {
       setModal({
         visible: true,
-        message: 'Произошла ошибка. Попробуйте еще раз.',
+        message: t.modalError2,
         success: false,
       });
     }
@@ -127,6 +127,13 @@ export default function Create() {
       productDesc: "Дизайн продукта",
       commentDesc: "Напишите ваши пожелания, идеи",
       submitTitle: "Отправить",
+      modalAgree: "Заявка отправлена!",
+      modalError1: "Ошибка отправки. Попробуйте еще раз.",
+      modalError2: "Произошла ошибка. Попробуйте еще раз.",
+      modalShould: "Необходимо согласие на обработку персональных данных",
+      modalClose: "Закрыть",
+      modalTitle1: "Успех",
+      modalTitle2: "Ошибка"
     },
     en: {
       mainTitle: "Submit Your Request",
@@ -151,7 +158,14 @@ export default function Create() {
       projectDesc: "Project Analysis and Improvement",
       productDesc: "Product Design",
       commentDesc: "Write your wishes, ideas",
-      submitTitle: "Submit"
+      submitTitle: "Submit",
+      modalAgree: "Application submitted!",
+      modalError1: "Submission error. Please try again.",
+      modalError2: "An error occurred. Please try again.",
+      modalShould: "Consent to the processing of personal data is required",
+      modalClose: "Close",
+      modalTitle1: "Success",
+      modalTitle2: "Error"
     },
     zh: {
       "mainTitle": "提交您的请求",
@@ -176,7 +190,14 @@ export default function Create() {
       "projectDesc": "项目分析与优化",
       "productDesc": "产品设计",
       "commentDesc": "写下您的愿望和想法",
-      "submitTitle": "提交"
+      "submitTitle": "提交",
+      "modalAgree": "申请已提交！",
+      "modalError1": "提交错误。请再试一次。",
+      "modalError2": "发生错误。请再试一次。",
+      "modalShould": "需要同意个人数据处理",
+      "modalClose": "关闭",
+      "modalTitle1": "成功",
+      "modalTitle2": "错误"
     }    
   };
 
@@ -188,14 +209,14 @@ export default function Create() {
         <div className={styles.modalOverlay}>
           <div className={styles.modalWindow}>
             <h2 className={styles.modalTitle}>
-              {modal.success ? 'Успех' : 'Ошибка'}
+              {modal.success ? t.modalTitle1 : t.modalTitle2}
             </h2>
             <p className={styles.modalMessage}>{modal.message}</p>
             <button
               className={styles.modalButton}
               onClick={() => setModal({ ...modal, visible: false })}
             >
-              Закрыть
+              {t.modalClose}
             </button>
           </div>
         </div>

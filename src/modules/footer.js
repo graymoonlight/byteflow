@@ -74,13 +74,17 @@ const Footer = () => {
           <h2>{texts[language].socialMedia}</h2>
           <div className={styles.mediaInfo}>
             <div>
-              <Image src={vk} alt="VK Icon" width={54} height={54}/>
+              <a href="https://vk.com/byteflowstudio">
+                <Image src={vk} alt="VK Icon" width={54} height={54}/>
+              </a>
             </div>
+            {language !== 'zh' && (
             <div>
               <a href="https://t.me/ByteFlowStudio">
                 <Image src={tg} alt="Telegram Icon" width={54} height={54} />
               </a>
             </div>
+            )}
           </div>
           <div className={styles.footerRights}>
             <h3>{texts[language].rights}</h3>
