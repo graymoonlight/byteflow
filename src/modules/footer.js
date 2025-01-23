@@ -38,6 +38,19 @@ const Footer = () => {
       portfolio: "Portfolio",
       create: "Create a project!",
     },
+    zh: {
+      contactInfo: "联系信息",
+      phone: "电话号码:",
+      email: "电子邮件:",
+      socialMedia: "社交媒体",
+      rights: "© 2024 ByteFlow Studio. 版权所有。",
+      navLinks: "导航链接",
+      home: "主页",
+      about: "关于我们",
+      services: "服务",
+      portfolio: "作品集",
+      create: "创建一个项目!",
+      },
   };
 
   return (

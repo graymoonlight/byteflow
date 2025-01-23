@@ -36,6 +36,19 @@ export default function Portfolio() {
                 "information about them."
               ]              
         },
+        zh: {
+            "projectTitle": "我们的项目",
+            "linkTitle": "汽车零件销售网站",
+            "descTitle": [
+              "Kangrun Auto 是一个现代化网站，",
+              "为一家中国公司设计，",
+              "专注于汽车零件销售。",
+              "该网站的创建注重用户体验和",
+              "导航的便利性，确保客户能够",
+              "轻松找到所需的零件及",
+              "相关信息。"
+            ]
+        }          
     };
 
     const t = texts[language];

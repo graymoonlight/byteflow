@@ -22,6 +22,12 @@ const Tab = () => {
       conceptTitle: "Concept Development",
       designTitle: "Product Design",
     },
+    zh: {
+      webTitle: "网页开发",
+      mobileTitle: "移动开发",
+      conceptTitle: "概念开发",
+      designTitle: "产品设计"
+    }
   };
 
   const t = texts[language];

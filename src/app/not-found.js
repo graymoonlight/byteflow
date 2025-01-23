@@ -18,7 +18,12 @@ export default function error404() {
       title: "This page does not exist :(",
       description: "Sorry, but this page is missing. Please return to the main page.",
       linkText: "Return to the main page"
-    }
+    },
+    zh: {
+      title: "此页面不存在 :(",
+      description: "抱歉，此页面丢失了。请返回主页。",
+      linkText: "返回主页"
+    },
   };
 
   const currentTexts = texts[language] || texts["ru"];

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -11,8 +11,9 @@ import menuIcon from "../../public/option.svg";
 
 const Header = () => {
   const pathname = usePathname();
-  const { language, toggleLanguage } = useLanguage();
+  const { language, setLanguage } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const texts = {
     ru: {
@@ -29,7 +30,15 @@ const Header = () => {
       services: "Services",
       portfolio: "Portfolio",
       create: "Create a project!",
-      changeLanguage: "Сменить язык",
+      changeLanguage: "Change language",
+    },
+    zh: {
+      home: "主页",
+      about: "关于我们",
+      services: "服务",
+      portfolio: "作品集",
+      create: "创建项目！",
+      changeLanguage: "Change language",
     },
   };
 
@@ -44,6 +53,16 @@ const Header = () => {
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
+  };
+
+  const handleLanguageChange = (lang) => {
+    setLanguage(lang);
+    localStorage.setItem("language", lang);
+    setDropdownOpen(false);
   };
 
   return (
@@ -74,16 +93,30 @@ const Header = () => {
             {texts[language].create}
           </Link>
           <div className={styles.languageSwitcher2}>
-            <button onClick={toggleLanguage}>
+            <button onClick={toggleDropdown}>
               {texts[language].changeLanguage}
             </button>
+            {dropdownOpen && (
+              <ul className={styles.dropdown}>
+                <li onClick={() => handleLanguageChange("ru")}>Русский</li>
+                <li onClick={() => handleLanguageChange("en")}>English</li>
+                <li onClick={() => handleLanguageChange("zh")}>中文</li>
+              </ul>
+            )}
           </div>
         </nav>
 
         <div className={styles.languageSwitcher1}>
-          <button onClick={toggleLanguage}>
+          <button onClick={toggleDropdown}>
             {texts[language].changeLanguage}
           </button>
+          {dropdownOpen && (
+            <ul className={styles.dropdown}>
+              <li onClick={() => handleLanguageChange("ru")}>Русский</li>
+              <li onClick={() => handleLanguageChange("en")}>English</li>
+              <li onClick={() => handleLanguageChange("zh")}>中文</li>
+            </ul>
+          )}
         </div>
       </div>
     </header>

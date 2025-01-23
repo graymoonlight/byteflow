@@ -27,6 +27,14 @@ const Tab2 = () => {
       smartTitle: "Smart-contracts",
       otherTitle: "Other services and apps",
     },
+    zh: {
+      marketsTitle: "电商平台",
+      socialTitle: "社交网络",
+      learnTitle: "教育平台",
+      web3Title: "Web 3.0 应用",
+      smartTitle: "智能合约",
+      otherTitle: "其他服务和应用"
+    },
   };
 
   const t = texts[language];
@@ -66,7 +74,7 @@ const Tab2 = () => {
       setTabContent(contentModule.default);
     };
     loadContent();
-  }, [activeTab]);
+  }, [activeTab, language]);
 
   return (
     <div className={styles.content}>
@@ -89,18 +97,22 @@ const Tab2 = () => {
         >
           {t.learnTitle}
         </button>
-        <button
-          className={`${styles.tabButton} ${activeTab === 'web3' ? styles.active : ''}`}
-          onClick={() => setActiveTab('web3')}
-        >
-          {t.web3Title}
-        </button>
-        <button
-          className={`${styles.tabButton} ${activeTab === 'contracts' ? styles.active : ''}`}
-          onClick={() => setActiveTab('contracts')}
-        >
-          {t.smartTitle}
-        </button>
+        {language !== 'zh' && (
+          <>
+            <button
+              className={`${styles.tabButton} ${activeTab === 'web3' ? styles.active : ''}`}
+              onClick={() => setActiveTab('web3')}
+            >
+              {t.web3Title}
+            </button>
+            <button
+              className={`${styles.tabButton} ${activeTab === 'contracts' ? styles.active : ''}`}
+              onClick={() => setActiveTab('contracts')}
+            >
+              {t.smartTitle}
+            </button>
+          </>
+        )}
         <button
           className={`${styles.tabButton} ${activeTab === 'other' ? styles.active : ''}`}
           onClick={() => setActiveTab('other')}

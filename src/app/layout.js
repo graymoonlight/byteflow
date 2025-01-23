@@ -1,4 +1,4 @@
-import '../styles/globals.css'
+import '../styles/globals.css';
 import Header from '@/modules/header';
 import Footer from '@/modules/footer';
 import { LanguageProvider } from '../context/LanguageContext';
@@ -12,11 +12,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-      <LanguageProvider>
-        <Header />
-        {children}
-        <Footer/>
-      </LanguageProvider>
+        <LanguageProvider>
+          <Header />
+          {children}
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );

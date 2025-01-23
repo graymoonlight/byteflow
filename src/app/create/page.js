@@ -153,6 +153,31 @@ export default function Create() {
       commentDesc: "Write your wishes, ideas",
       submitTitle: "Submit"
     },
+    zh: {
+      "mainTitle": "提交您的请求",
+      "fioTitle": "请输入您的全名*",
+      "companyTitle": "公司名称",
+      "phoneTitle": "您的电话号码",
+      "mailTitle": "您的电子邮件地址*",
+      "serviceTitle": "服务类型*",
+      "commentTitle": "评论",
+      "policyTitle": "我同意处理个人数据",
+      "fioDesc": "请输入全名",
+      "companyDesc": "请输入公司名称",
+      "phoneDesc": "请输入您的电话号码",
+      "mailDesc": "请输入您的电子邮件地址",
+      "serviceDesc": "选择服务",
+      "webDesc": "网页开发",
+      "mobileDesc": "移动开发",
+      "web3Desc": "Web 3.0 开发",
+      "conceptDesc": "概念开发",
+      "aiDesc": "人工智能服务开发",
+      "chatbotDesc": "聊天机器人开发",
+      "projectDesc": "项目分析与优化",
+      "productDesc": "产品设计",
+      "commentDesc": "写下您的愿望和想法",
+      "submitTitle": "提交"
+    }    
   };
 
   const t = texts[language];
@@ -238,9 +263,13 @@ export default function Create() {
                     <option value="">{t.serviceDesc}</option>
                     <option value="web_dev">{t.webDesc}</option>
                     <option value="mobile_dev">{t.mobileDesc}</option>
+                    {language !== 'zh' && (
                     <option value="web3_dev">{t.web3Desc}</option>
+                    )}
                     <option value="concept_dev">{t.conceptDesc}</option>
+                    {language !== 'zh' && (
                     <option value="ai_dev">{t.aiDesc}</option>
+                    )}
                     <option value="chatbot_dev">{t.chatbotDesc}</option>
                     <option value="project_analysis">{t.projectDesc}</option>
                     <option value="product_design">{t.productDesc}</option>
