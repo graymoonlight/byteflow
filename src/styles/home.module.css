@@ -215,8 +215,12 @@
 }
 
 @media (max-width: 768px) {
+  .HomeMain {
+    overflow-x: hidden; /* Скрывает горизонтальный скролл */
+  }
 
-  .PresImage{
+
+  .PresImage {
     display: none;
   }
 
@@ -225,6 +229,8 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    margin: 0; /* Убираем отступы */
+    padding: 0; /* Убираем отступы */
   }
 
   .PresText {
@@ -246,6 +252,7 @@
     align-items: center;
     text-align: center;
     padding: 1rem;
+    margin: 0; /* Убираем отступы */
   }
 
   .AboutBtns {
@@ -254,6 +261,7 @@
     padding: 1rem;
     justify-content: center;
     align-items: center;
+    margin: 0; /* Убираем отступы */
   }
 
   .AboutBtns button {
@@ -273,7 +281,7 @@
     margin: 1rem 0;
   }
 
-  .checkmark{
+  .checkmark {
     display: none;
   }
 
@@ -285,13 +293,14 @@
   .StructureSection {
     padding: 1rem;
     margin-top: 2rem;
+    margin-right: 0; /* Убираем отступ справа */
   }
-  
-  .win{
+
+  .win {
     display: none;
   }
 
-  .line{
+  .line {
     display: none;
   }
 
@@ -302,6 +311,8 @@
   .ContentContainer {
     display: flex;
     justify-content: space-around;
+    margin: 0; /* Убираем отступы */
+    padding: 0; /* Убираем отступы */
   }
 
   .LeftContent,
@@ -337,7 +348,7 @@
   }
 
   .MakingSection h1 {
-    font-size: 28px; /* Уменьшаем заголовок */
-    line-height: 1.2; /* Изменяем межстрочный интервал */
+    font-size: 28px;
+    line-height: 1.2;
   }
 }

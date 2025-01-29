@@ -27,6 +27,7 @@ export default function Services() {
       webpere1: "Маркетплейсы",
       webpere2: "Социальные сети",
       webpere3: "Образовательные платформы",
+      webpere4: "от 40.000",
       mobileTitle: "Мобильная разработка",
       mobileDesc: ["Мы разрабатываем мобильные",
         "приложения, которые гарантируют",
@@ -37,6 +38,7 @@ export default function Services() {
       mobilepere1: "Мобильные соцсети",
       mobilepere2: "Мобильный маркетплейс",
       mobilepere3: "Приложения для доставки",
+      mobilepere4: "0т 80.000",
       web3Title: "Веб 3.0 разработка",
       web3Desc: ["Создаем инновационные и",
         "безопасные веб3.0-решения,",
@@ -46,6 +48,7 @@ export default function Services() {
       web3pere1: "Сайт с веб 3.0",
       web3pere2: "Токены",
       web3pere3: "Приложения Telegram",
+      web3pere4: "от 150.000",
       conceptTitle: "Разработка концепции",
       conceptDesc: ["Есть идея, но не знаете, с чего",
         "начать? Мы поможем вам",
@@ -56,6 +59,7 @@ export default function Services() {
       conceptpere1: "Описание идеи вашего продукта",
       conceptpere2: "Описание концепции вашего продукта",
       conceptpere3: "Разработка технического задания",
+      conceptpere4: "от 10.000",
       aiTitle: "Разработка AI-сервисов",
       aiDesc: ["Интеллектуальные AI",
         "-сервисы, которые сделают ваш,",
@@ -63,6 +67,7 @@ export default function Services() {
         "конкурентоспособным:"],
       aipere1: "Платформы для генерации контента",
       aipere2: "AI-ассистенты на основе ChatGPT",
+      aipere3: "от 100.000",
       botTitle: "Разработка чат-ботов",
       botDesc: ["Мы разрабатываем чат-ботов,",
         "которые автоматизируют",
@@ -72,6 +77,7 @@ export default function Services() {
       botpere1: "Telegram-боты",
       botpere2: "Боты для продаж",
       botpere3: "Боты на основе ChatGPT",
+      botpere4: "от 20.000",
       analTitle: "Анализ и доработка проекта",
       analDesc: ["Осуществляем всесторонний",
         "анализ и оптимизацию ваших",
@@ -79,6 +85,7 @@ export default function Services() {
       analpere1: "Оптимизация рабочих процессов",
       analpere2: "Устранение багов",
       analpere3: "Анализ приложения",
+      analpere4: "от 150.000",
       designTitle: "Дизайн продукта",
       designDesc: ["Разрабатываем уникальный",
         "дизайн продукта, который",
@@ -88,6 +95,7 @@ export default function Services() {
       designpere1: "Индивидуальный подход",
       designpere2: "Фокус на пользовательском опыте",
       designpere3: "Адаптивность и современные тренды",
+      designpere4: "от 50.000",
     },
     en: {
       "pressTitle": ["Learn how we can",  
@@ -224,9 +232,12 @@ export default function Services() {
       ],
       "designpere1": "个性化方法",
       "designpere2": "专注于用户体验",
-      "designpere3": "适应性与现代趋势"
+      "designpere3": "适应性与现代趋势",
+ 
     }    
   };
+
+  
 
   const t = texts[language];
 
@@ -279,6 +290,7 @@ export default function Services() {
     <li>{t.webpere1}</li>
     <li>{t.webpere2}</li>
     <li>{t.webpere3}</li>
+    <li>{t.webpere4}</li>
     </ul>
     </div>
 
@@ -297,6 +309,7 @@ export default function Services() {
     <li>{t.mobilepere1}</li>
     <li>{t.mobilepere2}</li>
     <li>{t.mobilepere3}</li>
+    <li>{t.mobilepere4}</li>
     </ul>
     </div>
 
@@ -316,6 +329,7 @@ export default function Services() {
           <li>{t.web3pere1}</li>
           <li>{t.web3pere2}</li>
           <li>{t.web3pere3}</li>
+          <li>{t.web3pere4}</li>
         </ul>
       </div>
     )}
@@ -335,6 +349,7 @@ export default function Services() {
     <li>{t.conceptpere1}</li>
     <li>{t.conceptpere2}</li>
     <li>{t.conceptpere3}</li>
+    <li>{t.conceptpere4}</li>
     </ul>
     </div>
     
@@ -353,6 +368,7 @@ export default function Services() {
     <ul className={styles.CapabilitiesList}>
     <li>{t.aipere1}</li>
     <li>{t.aipere2}</li>
+    <li>{t.aipere3}</li>
     </ul>
     </div>
     )}
@@ -373,6 +389,7 @@ export default function Services() {
     <li>{t.botpere1}</li>
     <li>{t.botpere2}</li>
     <li>{t.botpere3}</li>
+    <li>{t.botpere4}</li>
     </ul>
     </div>
     )}
@@ -392,6 +409,7 @@ export default function Services() {
     <li>{t.analpere1}</li>
     <li>{t.analpere2}</li>
     <li>{t.analpere3}</li>
+    <li>{t.analpere4}</li>
     </ul>
     </div>
 
@@ -410,6 +428,7 @@ export default function Services() {
     <li>{t.designpere1}</li>
     <li>{t.designpere2}</li>
     <li>{t.designpere3}</li>
+    <li>{t.designpere4}</li>
     </ul>
     </div>
 
